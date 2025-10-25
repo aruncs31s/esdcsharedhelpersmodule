@@ -1,4 +1,4 @@
-module esdcsharedhelpersmodule
+module github.com/aruncs31s/esdcsharedhelpersmodule
 
 go 1.25.3
 
