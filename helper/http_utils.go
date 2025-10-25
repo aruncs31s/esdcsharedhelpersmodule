@@ -4,18 +4,16 @@ import (
 	"log"
 	"strconv"
 
-	"staff/utils"
-
+	"github.com/aruncs31s/esdcsharedhelpersmodule/utils"
 	"github.com/aruncs31s/responsehelper"
 	"github.com/gin-gonic/gin"
 )
-
 
 func GetJSONDataFromRequest[T any](c *gin.Context, responseHelper responsehelper.ResponseHelper) (T, bool) {
 	var data T
 	if err := c.ShouldBindJSON(&data); err != nil {
 		log.Printf("Error binding JSON: %v", err)
-		responseHelper.BadRequest(c, utils.ErrBadRequest.Error(), utils.FixInvalidRequestData)
+		responseHelper.BadRequest(c, utils.ErrBadRequest.Error(), err.Error())
 		return data, true
 	}
 	return data, false
