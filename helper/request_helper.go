@@ -1,8 +1,10 @@
 package helper
 
 import (
-	sharedHelper "esdcsharedhelpers/interface/helper"
 	"strconv"
+
+	sharedHelper "github.com/aruncs31s/esdcsharedhelpersmodule/interface/helper"
+	"github.com/aruncs31s/esdcsharedhelpersmodule/utils"
 
 	"github.com/gin-gonic/gin"
 )
