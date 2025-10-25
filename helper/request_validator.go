@@ -3,14 +3,19 @@ package helper
 import (
 	"fmt"
 
+	"github.com/aruncs31s/esdcsharedhelpersmodule/interface/helper"
 	"github.com/aruncs31s/esdcsharedhelpersmodule/utils"
 )
 
 type requestValidator struct{}
 
+func NewRequestValidator() helper.RequestValidator {
+	return &requestValidator{}
+}
+
 func (r *requestValidator) ValidateUsername(username string) error {
 	if username == "" {
-		return utils. ErrInvalidUsername
+		return utils.ErrInvalidUsername
 	}
 	return nil
 }
